@@ -1,0 +1,64 @@
+{% extends "host_list.html" %}
+{% block content %}
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <form class="form-horizontal form-border" id="form" method="post" action=".">
+                                       {% csrf_token %}
+                                       <div class="form-group">
+                                             <label class="col-sm-3 control-label">IP地址</label>
+                                             <div class="col-sm-6">
+                                             {{ form.ip }}
+                                             {{ form.ip.errors }}
+                                             </div>
+                                       </div>
+                                       <div class="form-group">
+                                             <label class="col-sm-3 control-label">主机名</label>
+                                             <div class="col-sm-6">
+                                             {{ form.hostname }}
+                                             {{ form.hostname.errors }}
+                                             </div>
+                                        </div>
+                                        <div class="form-group">
+                                             <label class="col-sm-3 control-label">MAC地址</label>
+                                             <div class="col-sm-6">
+                                             {{ form.macaddress }}
+                                             {{ form.macaddress.errors }}
+                                             </div>
+                                        </div>
+                                        <div class="form-group">
+                                             <label class="col-sm-3 control-label">操作系统</label>
+                                             <div class="col-sm-6">
+                                             {{ form.system_version }}
+					     {{ form.system_version.errors }}
+                                             </div>
+                                        </div>
+                                        <div class="form-group">
+                                             <label class="col-sm-3 control-label">Profile文件名</label>
+                                             <div class="col-sm-6">
+                                             {{ form.profile }}
+					     {{ form.profile.errors }}
+                                             </div>
+                                        </div>
+                                         <div class="col-sm-offset-8 col-sm-10">
+                                             {% ifequal action 'add' %}
+                                                 <button type="submit" class="btn btn-primary" >添加</button>
+                                             {% endifequal %}
+                                             {% ifequal action 'edit' %}
+                                                 <button type="submit" class="btn btn-primary" name="operate" value="update">更新</button>
+                                             {% endifequal %}
+                                        </div>
+
+
+
+                                </form>
+
+                            </div> <!-- panel body -->
+                        </div> <!-- panel end -->
+                    </div> <!-- col end -->
+                </div> <!-- row end -->
+
+{% endblock %}
