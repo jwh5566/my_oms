@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+{% block title %}远程管理{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal form-border" method="post" enctype="multipart/form-data"
+                          action="/deploy/remote_execution/?action=exec">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">目标主机</label>
+
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" name="tgt" value={{ tgt }}>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">远程命令</label>
+
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" name="arg" value={{ arg }}>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-8 col-sm-10">
+                                <button type="submit" class="btn btn-primary">提交</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">返回结果</label>
+
+                            <div class="col-sm-6">
+                                <textarea class="form-control" rows="10">{{ ret }}</textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--row end-->
+
+{% endblock %}

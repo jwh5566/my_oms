@@ -1,9 +1,4 @@
-#!/usr/bin/env python 
 # -*- coding: utf-8 -*-
-#
-# @author: binbin <redhat.binbin@gmail.com>
-# Created on Aug 8, 2014
-
 # import cobbler
 import xmlrpclib 
 
