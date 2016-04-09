@@ -24,3 +24,6 @@
 ![主页](https://github.com/jwh5566/my_oms/blob/master/demo/saltkey_list.jpg)
 ![主页](https://github.com/jwh5566/my_oms/blob/master/demo/module.jpg)
 ![主页](https://github.com/jwh5566/my_oms/blob/master/demo/remote.jpg)
+
+添加审计记录
+![主页](https://github.com/jwh5566/my_oms/blob/master/demo/log.jpg)
