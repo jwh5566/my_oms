@@ -21,13 +21,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{% url "host_list" %}">我的运维平台</a>
+            <a class="navbar-brand" href="{% url "index" %}">我的运维平台</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
-                <li><a href="#">登陆</a></li>
-                <li><a href="#about">注册</a></li>
-                <li><a href="#contact">保留</a></li>
+                <li><a href="{% url "login" %}">登陆</a></li>
+                <li><a href="{% url "logout" %}">退出</a></li>
+                <li><a href="#contact">注册</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -51,14 +51,19 @@
                 <li class="active">
                     <a href="{% url "install_record" %}">系统安装记录</a>
                 </li>
+                <li><p></p></li>
                 <li class="active">
-                    <a href="{% url "install_record" %}">保留</a>
+                    <a href="{% url "key_list" %}">Salt认证</a>
                 </li>
                 <li class="active">
-                    <a href="{% url "install_record" %}">保留</a>
+                    <a href="{% url "module_deploy" %}">模块管理</a>
                 </li>
                 <li class="active">
-                    <a href="{% url "install_record" %}">保留</a>
+                    <a href="{% url "remote_execution" %}">远程管理</a>
+                </li>
+                <p></p>
+                <li class="active">
+                    <a href="{% url "remote_execution" %}">Zabbix接口集成</a>
                 </li>
 
 

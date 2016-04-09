@@ -14,8 +14,8 @@ class HostList(models.Model):
         return u'%s - %s - %s' %(self.ip, self.hostname, self.application )
 
     class Meta:
-        verbose_name = u'主机列表'
-        verbose_name = u'主机列表管理'
+        # verbose_name = u'主机列表'
+        verbose_name_plural = u'主机列表管理'
 
 class Message(models.Model):
     """
@@ -28,5 +28,5 @@ class Message(models.Model):
     content = models.CharField(max_length=50, verbose_name=u'内容')
 
     class Meta:
-        verbose_name = u'审计信息'
-        verbose_name = u'审计信息管理'
+        # verbose_name = u'审计信息'
+        verbose_name_plural = u'审计信息管理'

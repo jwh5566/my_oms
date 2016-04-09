@@ -11,6 +11,9 @@ class db_operate:
             for row in cursor.fetchall():
                 for i in row:
                     ret.append(i)
+            conn.commit()
+            cursor.close()
+            conn.close()
         except MySQLdb.Error,e:
             ret.append(e)
 
@@ -25,6 +28,9 @@ class db_operate:
             for row in cursor.fetchall():
                 for i in row:
                     ret.append(i)
+            conn.commit()
+            cursor.close()
+            conn.close()
         except MySQLdb.Error,e:
             ret.append(e)
 

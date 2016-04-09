@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
+from django.core.paginator import Paginator
+
 from asset.models import HostList, Message
 from .models import SystemInstall, InstallRecord
 from cobbler_api import CobblerAPI
 from my_oms import settings
-from django.http import HttpResponseRedirect, HttpResponse
-from django.core.urlresolvers import reverse
 from form import SystemInstallForm
 from my_oms.mysql import db_operate
-from django.core.paginator import Paginator
 
 
 def system_install(request):
@@ -62,7 +63,7 @@ def system_install_list(request):
     #     p.save()
 
     all_system_list = SystemInstall.objects.all()
-    print all_system_list
+    # print all_system_list
     paginator = Paginator(all_system_list,10)
 
     try:

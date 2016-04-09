@@ -16,7 +16,7 @@ class SystemInstall(models.Model):
         return u'%s -- %s' %(self.ip, self.install_date)
 
     class Meta:
-        verbose_name = u'装机列表'
+        # verbose_name = u'装机列表'
         verbose_name_plural = u'装机列表管理'
 
 class InstallRecord(models.Model):
@@ -31,5 +31,5 @@ class InstallRecord(models.Model):
         return u'%s - %s' %(self.ip, self.system_version)
 
     class Meta:
-        verbose_name = u'装机记录'
-        verbose_name = u'装机记录管理'
+        # verbose_name = u'装机记录'
+        verbose_name_plural = u'装机记录管理'
