@@ -1,0 +1,31 @@
+安装
+1.Cobbler(OMS需要调用cobbler代码模块)
+    yum install cobbler
+
+2.Saltstack
+     yum install salt-master
+
+3.Saltstack API、配置
+    yum install salt-api
+
+4.MySQL-python
+     yum install MySQL-python
+
+5.MySQL安装配置(OMS数据模型、APP代码需要调用)
+     1.新装一个MySQL
+
+
+
+配置(根据环境自行配置)：
+     settings.py 数据库信息 （在数据库中新建一个salt_returns表，只有一个字段returns，用来存储jid的值）
+     settings_local.py API接口信息，数据库信息
+     cobble_api.py  连接信息
+
+启动
+1.导入数据类型
+  mysql -uroot -p -e 'create database oms;'
+  python manage.py makemigrations
+  python manage.py migrate
+
+2.启动程序
+  直接启动， python manage.py runserver 0.0.0.0:8000
