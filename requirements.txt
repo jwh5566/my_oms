@@ -1,0 +1,8 @@
+组件要求：
+1.Django1.8.X
+2.Cobbler
+3.Saltstack 2015.8.8
+4.Salt API 2015.8.8.2
+5.MySQL-python、MySQL
+6.Python 2.7
+
