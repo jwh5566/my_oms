@@ -1,19 +1,21 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
+from django.core.paginator import Paginator
+
 from .models import HostList, Message
-from django.http import  HttpResponse, HttpResponseRedirect
 from my_oms.mysql import db_operate
 from my_oms import settings
-from django.core.urlresolvers import reverse
 from .form import HostsListForm
-from django.core.paginator import Paginator
+
 
 def host_list(request):
     """
     List all Hosts
     """
     user = request.user
-    host_list = HostList.objects.all()
+    host_list = HostList.objects.all().order_by('-status')
     # host_list = HostList.objects.all()
     paginator = Paginator(host_list,10)
 
@@ -28,7 +30,7 @@ def host_list(request):
         all_host = paginator.page(paginator.num_pages)
 
     return render(request, 'host_list.html', {'host_list': host_list, 'page': page, 'paginator':paginator})
-    return render(request, 'host_list.html',{'host_list': host_list})
+    # return render(request, 'host_list.html',{'host_list': host_list})
 
 def host_list_manage(request, id=None):   # 负责添加和修改和删除主机，删除，修改主机需要提供id号
     if id:
@@ -78,3 +80,20 @@ def host_list_manage(request, id=None):   # 负责添加和修改和删除主机
             # "page_name": page_name,
             "action": action,  # 这里action 要注意 如果是edit 页面显示edit按钮 如果是add页面显示add按钮
            })
+
+
+def record(request):
+    message_list = Message.objects.all().order_by('-audit_time')
+    paginator = Paginator(message_list, 10)
+
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    try:
+        message_list = paginator.page(page)
+    except:
+        all_host = paginator.page(paginator.num_pages)
+
+    return render(request, 'record.html', {'message_list': message_list, 'page': page, 'paginator': paginator})

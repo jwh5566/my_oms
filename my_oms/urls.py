@@ -24,6 +24,7 @@ from deploy.views import *
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', index, name='index'),
+    url(r'^record$', record, name='record'),
     # url(r'^$', 'django.contrib.auth.views.login', name='login'),
     url(r'^account/', include('account.urls')),
 

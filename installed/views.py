@@ -62,7 +62,7 @@ def system_install_list(request):
     #     p = SystemInstall(ip=install_list[i]['ip'],hostname=install_list[i]['hostname'],macaddress=install_list[i]['macaddress'],system_version=install_list[i]['system_version'])
     #     p.save()
 
-    all_system_list = SystemInstall.objects.all()
+    all_system_list = SystemInstall.objects.all().order_by('-install_date')
     # print all_system_list
     paginator = Paginator(all_system_list,10)
 
@@ -128,7 +128,7 @@ def system_install_record(request):
 
     user = request.user
 
-    record = InstallRecord.objects.all()
+    record = InstallRecord.objects.all().order_by('-install_date')
     paginator = Paginator(record,10)
 
     try:
