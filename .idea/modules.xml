@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/my_oms.iml" filepath="$PROJECT_DIR$/.idea/my_oms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mysql_test/.idea/mysql_test.iml" filepath="$PROJECT_DIR$/../mysql_test/.idea/mysql_test.iml" />
+      <module fileurl="file://F:/oms-master/.idea/oms-master.iml" filepath="F:/oms-master/.idea/oms-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../salt_api_test/.idea/salt_api_test.iml" filepath="$PROJECT_DIR$/../salt_api_test/.idea/salt_api_test.iml" />
     </modules>
   </component>
 </project>
