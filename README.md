@@ -11,6 +11,7 @@
 再次感谢彬彬大神的源码，让我学到了很多东西。
 
 我的邮箱: jwh5566@foxmail.com
+
 组件需求：requirements.txt         
 安装文档：install.txt
 
