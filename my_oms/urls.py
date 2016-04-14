@@ -24,11 +24,11 @@ from deploy.views import *
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', index, name='index'),
-    url(r'^record$', record, name='record'),
+
     # url(r'^$', 'django.contrib.auth.views.login', name='login'),
     url(r'^account/', include('account.urls')),
 
-
+    url(r'^asset/record$', record, name='record'),
     url(r'^asset/host_list/$', host_list, name='host_list'),
     url(r'^asset/add_host/$', host_list_manage, name='add_host'),
     url(r'^asset/host_manage/(?P<id>\d+)/$', host_list_manage, name='host_manage'),
